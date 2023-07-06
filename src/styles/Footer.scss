@@ -1,0 +1,72 @@
+.footer {
+  .footerContainerBox {
+    background: #333333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .footerContainer {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+  .midSectionLinks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 0 47px;
+    @media only screen and (max-width: 900px) {
+      .midSectionLinks {
+        margin: 20px 0;
+        padding: 0px 0px !important;
+      }
+    }
+  }
+  .FaddedText {
+    font-size: 14px;
+    color: #645e5e;
+  }
+  .mollaIconsBox {
+    margin-top: 20px;
+    gap: 7px;
+    color: #645e5e;
+  }
+  .mollaIcons {
+    border: 1px solid white;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+  }
+
+  .cardsContainer {
+    display: flex;
+    gap: 10px;
+    justify-content: end;
+    align-items: center;
+
+    @media only screen and (max-width: 600px) {
+      .cardsContainer {
+        margin-top: 1rem;
+        justify-content: flex-start;
+      }
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    .copyRightsBox {
+      gap: 10px;
+      justify-content: flex-start;
+    }
+  }
+
+  .cards {
+    max-width: 50px;
+    width: 100%;
+    height: 30px;
+    background: red;
+  }
+}
