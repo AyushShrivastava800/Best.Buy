@@ -4,7 +4,7 @@ import Header from "./component/layout/Header";
 import LandingPage from "./component/screens/landing-page";
 import Footer from "./component/screens/Footer/index";
 import Store from "./component/screens/Store";
-import Products from "./component/screens/Products";
+import Products from "./component/screens/ProductDetailsPage";
 const App = () => {
   return (
     <>

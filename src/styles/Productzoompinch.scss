@@ -1,0 +1,131 @@
+.product-text-box {
+  .sandal {
+    font-size: $h3-font-size;
+    color: $gray;
+  }
+  .ratingBox {
+    display: flex;
+    justify-content: start;
+    align-items: end;
+    gap: 12px;
+    .review {
+      color: $gray;
+      font-size: 12px;
+    }
+  }
+  .priceBox {
+    display: flex;
+    justify-content: start;
+    align-items: end;
+    gap: 12px;
+    .discountedPrice {
+      font-size: 22px;
+      color: $danger;
+    }
+    .realPrice {
+      font-size: 22px;
+      color: $light-gray;
+      text-decoration: line-through;
+    }
+  }
+  .card-desc-lorem-box {
+    .card-desc-lorem {
+      color: gray !important;
+    }
+  }
+  .button-Box {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    @media only screen and (max-width:600px){
+      flex-direction: column;
+justify-content: flex-start;
+align-items: flex-start;
+    }
+    .btn {
+      height: 3.5rem;
+      max-width: 15.81rem;
+      width: 100%;
+      color: $primary;
+      border-color: $primary;
+      &:hover {
+        border: 1px solid $primary;
+      }
+    }
+
+    .wishList {
+      height: 3.5rem;
+      max-width: 15.81rem;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      color: $gray;
+      &:hover {
+        color: $light-red;
+        cursor: pointer;
+      }
+      .heartIcon {
+        color: $primary;
+      }
+    }
+  }
+  .categoryBox {
+    color: $gray;
+  }
+  .shareBox {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 2rem;
+    .share {
+      color: $gray;
+    }
+    .shareBox-icons {
+      display: flex;
+      gap: 10px;
+      .shareIcon {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        border: 1px solid $light-gray;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:hover {
+          background-color: $primary;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .counterBox {
+    .counterContainer {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+   gap: 3.5rem;
+      .counter {
+        height: 3rem;
+        border: 1px solid $light-gray;
+        max-width: 8rem;
+        width: 100%;
+        padding-inline: 1rem;
+        color: $gray;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+      }
+
+      .qty {
+        color: $gray;
+      }
+    }
+  }
+ 
+}
+

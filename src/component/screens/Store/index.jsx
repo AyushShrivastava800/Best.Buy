@@ -5,14 +5,14 @@ import { NavLink } from "react-router-dom";
 
 
 import Productcard from "../../generic-component/product-card";
-import Filter from "./FilterButton";
-import "./index.scss";
-import SortBy from "./SortBy";
+import Filter from "./filterbtn/FilterButton";
+import SortBy from "./storeSortby/SortBy";
 import MenuIcon from "@mui/icons-material/Menu";
-import SideBar from "./SideBar.jsx";
+import SideBar from "./storesidebar/SideBar.jsx";
 import Drawer from '@mui/material/Drawer';
 
 import CloseIcon from '@mui/icons-material/Close';
+import TopBanner from "../../generic-component/TopBannner";
 
 const Products = [
   { id: 1 },
@@ -45,7 +45,9 @@ function Store() {
   return (
     <div>
       <Box className="mainStore">
-        <Box className="bannerImg"></Box>
+              <Box>
+              <TopBanner/>
+              </Box>
         <Box className="store">
           <Container>
             <Box>
@@ -95,6 +97,7 @@ function Store() {
                     {Products.map((e) => (
                       <Grid item md={3} sm={4} xs={6} key={e.id}>
                       <NavLink
+                      className="cardLinks"
                       key={e}
                       to={'/products'}
                       

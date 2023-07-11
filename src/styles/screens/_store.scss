@@ -1,0 +1,36 @@
+.mainStore {
+  .store {
+    height: 100%;
+  }
+  .cardLinks{
+    text-decoration: none;
+  }
+  .filterBar {
+
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .filterBtn ,.sortBtn{
+color: black;
+  }
+    
+  
+  .fsBarbutton {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+  }
+  .filterSidebar {
+    width: 100%;
+  }
+  .showProductstxt {
+    height: 3rem;
+    color: "#333333";
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
