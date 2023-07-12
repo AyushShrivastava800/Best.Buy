@@ -5,6 +5,7 @@ import LandingPage from "./component/screens/landing-page";
 import Footer from "./component/screens/Footer/index";
 import Store from "./component/screens/Store";
 import Products from "./component/screens/ProductDetailsPage";
+import Blog from "./component/screens/blogPage/index"
 const App = () => {
   return (
     <>
@@ -13,7 +14,7 @@ const App = () => {
         <Route exact path="/" element={<LandingPage />} />
         <Route exact path="/store" element={<Store />}/>
         <Route exact path="/products" element={<Products />}/>
-
+        <Route exact path="/blog" element={<Blog />}/>
       </Routes>
       <Footer/>
     

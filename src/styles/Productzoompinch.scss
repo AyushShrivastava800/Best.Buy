@@ -38,10 +38,10 @@
     justify-content: start;
     align-items: center;
     gap: 10px;
-    @media only screen and (max-width:600px){
+    @media only screen and (max-width: 600px) {
       flex-direction: column;
-justify-content: flex-start;
-align-items: flex-start;
+      justify-content: flex-start;
+      align-items: flex-start;
     }
     .btn {
       height: 3.5rem;
@@ -107,7 +107,7 @@ align-items: flex-start;
       display: flex;
       justify-content: flex-start;
       align-items: center;
-   gap: 3.5rem;
+      gap: 3.5rem;
       .counter {
         height: 3rem;
         border: 1px solid $light-gray;
@@ -118,7 +118,6 @@ align-items: flex-start;
         display: flex;
         justify-content: space-between;
         align-items: center;
-
       }
 
       .qty {
@@ -126,6 +125,4 @@ align-items: flex-start;
       }
     }
   }
- 
 }
-

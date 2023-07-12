@@ -4,9 +4,7 @@ import {
   Button,
   Container,
   Divider,
-  Grid,
-  Hidden,
-  Paper,
+
   Typography,
 } from "@mui/material";
 import Rating from "@mui/material/Rating";
@@ -15,7 +13,7 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 
 function Productzoompinch() {
-  const [value, setValue] = React.useState(2);
+ 
   return (
     <>
       <Box>
