@@ -55,7 +55,7 @@ const ProductZoom = () => {
   return (
     <div>
       <Container>
-        <Grid container spacing={1} className="productZoom">
+        <Grid container spacing={3} className="productZoom">
           <Grid item xs={12} sm={3} className="productZoomItemOne">
             <Slider
               asNavFor={nav1}

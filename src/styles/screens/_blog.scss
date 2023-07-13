@@ -28,12 +28,32 @@
       justify-content: flex-start;
       align-items: center;
       gap: 10px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .toolTips {
+      display: none;
     }
   }
   @media only screen and (max-width: 600px) {
     .AvatarLine {
-      flex-direction: column;
-      align-items: flex-start;
+      .toolTips {
+        display: inline-block;
+      }
+      .hideIcon {
+        display: none;
+      }
+    }
+    .Avatar {
+      height: 90px;
+      width: 90px;
+    }
+    .flexesIcon {
+      font-size: 3rem;
+    }
+    .flexesTxt {
+      display: none;
     }
   }
   .blogContents {
@@ -105,6 +125,10 @@
         background-color: #fff;
         border-radius: 50%;
         border: 1px solid $light-gray;
+        &:hover {
+          background-color: $primary;
+          cursor: pointer;
+        }
         .icons {
           font-size: 1.25rem;
         }
@@ -128,6 +152,7 @@
       justify-content: center;
       align-items: flex-start;
       gap: 20px;
+
       @media only screen and (max-width: 600px) {
         flex-direction: column;
       }
@@ -161,8 +186,8 @@
     .replyFormContainer {
       display: flex;
       flex-direction: column;
-
       gap: 20px;
+
     }
 
     .fieldBox {
@@ -173,9 +198,6 @@
     }
     .outlined-basic {
       background-color: $field-background;
-      border-color: $primary;
-     
-   
     }
 
     .messageBox {
@@ -187,36 +209,42 @@
       align-items: center;
 
       .postCommentBtn {
-      color: $dark-gray;
-      font-size: $font-size-base;
-      color: $dark-gray;
-      font-weight: $font-weight-bold;
+        color: $dark-gray;
+        font-size: $font-size-base;
+        color: $dark-gray;
+        font-weight: $font-weight-bold;
         width: 15rem;
         height: 3rem;
         border: 1px solid $primary;
       }
     }
+    @media only screen and (max-width: 600px) {
+    .fieldBox{
+      flex-direction: column;
+    }
+    }
   }
   // sidebar section
 
   .categoriesContainer {
-background-color: $field-background;
-box-shadow: $box-shadow;
+    background-color: $field-background;
+    box-shadow: $box-shadow;
     padding: 1rem;
-
     height: auto;
+
     .categoriesText {
-    font-size: $h3-font-size;
-    font-weight: $font-weight-bold;
+      font-size: $h3-font-size;
+      font-weight: $font-weight-bold;
+
     }
-    .fa-angle-double-right{
+    .fa-angle-double-right {
       color: $light-red;
     }
-    .linkText{
+    .linkText {
       font-size: $font-size-lg;
-font-weight: $font-weight-bold;
+      font-weight: $font-weight-bold;
     }
-    .linkNumber{
+    .linkNumber {
       height: 100%;
       width: 1.25rem;
       text-align: center;
@@ -226,6 +254,7 @@ font-weight: $font-weight-bold;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      margin-bottom: 0.5rem;
       .linkFlex {
         display: flex;
         justify-content: space-between;
@@ -233,35 +262,36 @@ font-weight: $font-weight-bold;
         gap: 10px;
       }
     }
+    
   }
 
-  .galleyContainer{
+  .galleyContainer {
     background-color: $field-background;
     box-shadow: $box-shadow;
     padding: 1rem;
     height: auto;
-    .galleyHeading{
+    .galleyHeading {
       font-size: $h3-font-size;
       font-weight: $font-weight-bold;
     }
+    
+  }
+  .advertiseMentContainer {
+    background-color: $field-background;
+    box-shadow: $box-shadow;
+    padding: 1rem;
+    height: auto;
+    .advertiseMentHeading {
+      font-size: $h3-font-size;
+      font-weight: $font-weight-bold;
+      width: 100%;
+    }
+    .advertiseImage {
+      height: fit-content;
+      width: 100%;
+    }
+ 
+  }
 
-
-  }
-.advertiseMentContainer{
-  background-color: $field-background;
-  box-shadow: $box-shadow;
-  padding: 1rem;
-  height: auto;
-  .advertiseMentHeading{
-    font-size: $h3-font-size;
-    font-weight: $font-weight-bold;
-  }
-  .advertiseImage{
-    height: fit-content;
-    width: 100%;
-  }
+  
 }
-
-}
-
-

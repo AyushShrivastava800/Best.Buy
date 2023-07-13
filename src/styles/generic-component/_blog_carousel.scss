@@ -1,0 +1,17 @@
+.blog-carousel-box {
+    .carousel-heading {
+      text-align: center;
+      padding: 2rem;
+      font-size: $h3-font-size;
+      color: $gray;
+    }
+    .blogCards {
+        margin-left: 1rem;
+    }   
+   
+   .slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus{
+
+    color: $gray !important;
+   }
+  
+  }
