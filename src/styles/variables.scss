@@ -20,8 +20,8 @@ $grid-breakpoints: (
   xlBreakpoint: $xl-breakpoint,
 );
 
-$primary: #CC9966;
-$secondary: #7DD2EA;
+$primary: #cc9966;
+$secondary: #7dd2ea;
 $error: #c5291c;
 $white: #ffffff;
 $black: #000000;
@@ -29,17 +29,16 @@ $gray: #777777;
 $success: #46962b;
 $danger: #ff0000;
 $warning: #ffc400;
-$light-red: #EF837B;
-$light-green: #A6C76C;
-$light-gray: #CCCCCC;
-$light-blue: #7DD2EA;
+$light-red: #ef837b;
+$light-green: #a6c76c;
+$light-gray: #cccccc;
+$light-blue: #7dd2ea;
 $dark-gray: #333333;
 $field-background: #f9f9f9;
 $linear-background: transparent linear-gradient(90deg, #005395 0%, #002a4b 100%)
   0% 0% no-repeat padding-box;
 
 //Typography
-
 
 $font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
 $font-size-lg: ($font-size-base * 1.125) !default; //18px
@@ -81,9 +80,19 @@ $headings-font-family: inherit !default;
 $headings-font-weight: $font-weight-normal !default;
 $headings-line-height: 1.5 !default;
 
-
 $input-border-radius: 0.25rem;
 $box-border-radius: 1rem;
 
 // box-shadow
 $box-shadow: 0rem 0.1875rem 0.375rem #00000029;
+
+.mt-10 {
+  margin-top: 0.625rem !important;
+}
+
+.mt-18 {
+  margin-top: 1.125rem !important;
+}
+.mt-25{
+  margin-top: 25px !important;
+}

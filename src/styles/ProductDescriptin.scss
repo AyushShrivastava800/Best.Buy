@@ -1,0 +1,39 @@
+.product-description-tabs {
+  width: 100%;
+}
+.tabsbutton {
+  text-transform: capitalize !important;
+  font-size: 1.125rem !important;
+  @media screen and (max-width: 600px) {
+    max-width: 2rem !important;
+    width: 100% !important;
+    font-size: 0.75rem !important;
+    padding: 0 !important;
+  }
+}
+
+.tabs1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1rem;
+  border: 1px;
+}
+.desc-head {
+  font-size: 22px;
+}
+.desc-para {
+  font-style: 16px;
+  color: #645e5e91;
+}
+.list-box {
+  list-style-type: disc;
+  .list-items {
+    display: list-item;
+    padding: 0px;
+    color: #443f3fc9;
+  }
+}
+.tabs-desc-paper {
+  margin-bottom: 4rem;
+}

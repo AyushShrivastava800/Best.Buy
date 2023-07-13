@@ -3,7 +3,7 @@
 
   .categoryContainer,
   .innerCategoryContainer {
-    height: 50rem !important;
+    height: 40rem !important;
     transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     @media (max-width: 600px) {
@@ -55,7 +55,7 @@
   }
 
   .innerCategoryContainer {
-    height: 24.5rem !important;
+    height: 19.5rem !important;
 
     @media (max-width: 600px) {
       height: 14.5rem !important;

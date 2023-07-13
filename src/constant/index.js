@@ -11,5 +11,9 @@ export const navLinks = [
         title : "Blog",
         path:"/blog"
     },
+    {
+        title : "Products",
+        path:"/products"
+    },
    
 ]
