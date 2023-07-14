@@ -12,39 +12,39 @@ import Counter from "./counter/Counter";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 
-function Productzoompinch() {
- 
+function Productzoompinch({product}) {
+  
   return (
     <>
       <Box>
         <Container>
           <Box className="product-text-box ">
             <Typography variant="h5" className="sandal text-capitalize">
-              Sandals cool
-            </Typography>
-            <Box className="ratingBox mt-10">
-              <Rating name="read-only" value={5} size="medium" readOnly />
-              <Typography variant="caption" className="review">
-                (2 reviews)
-              </Typography>
-            </Box>
+                {product.name}
+              </Typography> 
+              {product.Rating.map((items)=>(
+                <Box className="ratingBox mt-10">
+                  <Rating name="read-only" value={items.stars} size="medium" readOnly />
+                  <Typography variant="caption" className="review">
+                    ({items.reviews}    reviews)
+                  </Typography>
+                </Box>
+                ))}
 
-            <Box className="priceBox mt-10">
-              <Typography variant="caption" className="discountedPrice mt-10">
-                $337.00
-              </Typography>
-              <Typography variant="caption" className="realPrice mt-10">
-                $499.00
-              </Typography>
-            </Box>
+                {product.price.map((items)=>(
+                  <Box className="priceBox mt-10">
+                    <Typography variant="caption" className="discountedPrice mt-10">
+                    {items.newPrice}
+                    </Typography>
+                    <Typography variant="caption" className="realPrice mt-10">
+                      {items.oldPrice}
+                    </Typography>
+                  </Box>
+               
+                  ))}
             <Box className="card-desc-lorem-box mt-10">
               <Typography className="card-desc-lorem">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
-                faucibus arcu et dolor varius iaculis. Curabitur euismod, enim
-                sit amet semper eleifend, mi risus mattis ligula, quis egestas
-                nibh risus sit amet nunc. In in ornare ipsum. Nulla porttitor
-                laoreet magna. Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit
+             {product.text}
               </Typography>
             </Box>
             <Box className="counterBox mt-10">
@@ -68,7 +68,7 @@ function Productzoompinch() {
             <Divider className="mt-30" />
             <Box className="categoryBox mt-30">
               <Typography className="category text-capitalize">
-                Category: Boots, Shoes, Women
+              category:  {product.category}
               </Typography>
             </Box>
             <Box className="shareBox mt-30">

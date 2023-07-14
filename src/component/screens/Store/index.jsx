@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, Typography, Divider } from "@mui/material";
 import { Box, Container } from "@mui/system";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 import Productcard from "../../generic-component/product-card";
@@ -10,20 +10,11 @@ import SortBy from "./storeSortby/SortBy";
 import MenuIcon from "@mui/icons-material/Menu";
 import SideBar from "./storesidebar/SideBar.jsx";
 import Drawer from '@mui/material/Drawer';
-
+import {ProductData} from "../../../data/Product"
 import CloseIcon from '@mui/icons-material/Close';
 import TopBanner from "../../generic-component/TopBannner";
 
-const Products = [
-  { id: 1 },
-  { id: 2 },
-  { id: 3 },
-  { id: 4 },
-  { id: 5 },
-  { id: 6 },
-  { id: 7 },
-  { id: 8 },
-];
+
 
 
 function Store() {
@@ -94,15 +85,15 @@ function Store() {
                 </Grid>
                 <Grid item md={9} sm={12}>
                   <Grid container spacing={1} className="productsGrid">
-                    {Products.map((e) => (
-                      <Grid item md={3} sm={4} xs={6} key={e.id}>
-                      <NavLink
+                    {ProductData?.map((data,index) => (
+                      <Grid item md={3} sm={4} xs={6} >
+                      <Link
                       className="cardLinks"
-                      key={e}
-                      to={'/products'}
+                      key={index}
+                      to={ {pathname: `/products/${data.id}`}}
                       
                       
-                      ><Productcard /></NavLink>
+                      ><Productcard data={data} /></Link>
                       
                       </Grid>
                     ))}

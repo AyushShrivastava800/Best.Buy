@@ -7,8 +7,14 @@ import ProductCarousel from "../../generic-component/productCarousel/ProductCaro
 import ProductDesc from "./product-description-tabs/ProductDesc";
 import Productzoompinch from "./product-zoom-pinch/Productzoompinch";
 import ProductZoomslider from "./product-zoom-pinch/productZoomSlider/ProductzoomSlider";
-
+import { useParams } from "react-router-dom";
+import { ProductData } from "../../../data/Product";
 function ProductDetailsPage() {
+  const {id} = useParams();
+
+const product=ProductData.find((product)=>product.id==id)
+
+
   return (
     <Box className="ProductDetailsPage">
       <Box>
@@ -17,18 +23,19 @@ function ProductDetailsPage() {
       <Box>
         <Container>
           <Grid container>
-            <Grid item xs={12}  className="product-zoom-pinch">
+            <Grid item xs={12} className="product-zoom-pinch">
               <Grid container className="mt-18">
                 <Grid item xs={12} sm={12} md={6}>
-                  <ProductZoomslider />
+                  <ProductZoomslider product={product} />
                 </Grid>
                 <Grid item xs={12} sm={12} md={6}>
-                  <Productzoompinch />
+                <Productzoompinch  product={product} />
+
                 </Grid>
               </Grid>
             </Grid>
             <Grid item xs={12} className="product-description-tabs">
-              <ProductDesc />
+              <ProductDesc  product={product}  />
             </Grid>
 
             <Grid

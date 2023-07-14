@@ -3,11 +3,11 @@
 }
 .tabsbutton {
   text-transform: capitalize !important;
-  font-size: 1.125rem !important;
+  font-size:$font-size-lg !important;
   @media screen and (max-width: 600px) {
-    max-width: 2rem !important;
+    max-width: 32px !important;
     width: 100% !important;
-    font-size: 0.75rem !important;
+    font-size: $body3-font-size !important;
     padding: 0 !important;
   }
 }
@@ -20,10 +20,10 @@
   border: 1px;
 }
 .desc-head {
-  font-size: 22px;
+  font-size: $h3-font-size !important;
 }
 .desc-para {
-  font-style: 16px;
+  font-size: $font-size-base ;
   color: #645e5e91;
 }
 .list-box {
@@ -31,9 +31,7 @@
   .list-items {
     display: list-item;
     padding: 0px;
-    color: #443f3fc9;
+    color: $dark-gray;
   }
 }
-.tabs-desc-paper {
-  margin-bottom: 4rem;
-}
+

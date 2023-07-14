@@ -2,6 +2,9 @@ import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 import Productcard from "../../generic-component/product-card";
 import SideProductCard from "../../generic-component/sidebox-product-card";
+import { ProductData } from "../../../data/Product";
+import { Link } from "react-router-dom";
+import ProductDesc from "../ProductDetailsPage/product-description-tabs/ProductDesc";
 
 const LandingStore = () => {
   return (
@@ -15,24 +18,20 @@ const LandingStore = () => {
           </Grid>
           <Box className="landingProducts mt-30 mb-30">
             <Grid container spacing={1}>
-              <Grid item xs={6} sm={4}>
-                <Productcard />
-              </Grid>
-              <Grid item xs={6} sm={4}>
-                <Productcard />
-              </Grid>
-              <Grid item xs={6} sm={4}>
-                <Productcard />
-              </Grid>
-              <Grid item xs={6} sm={4}>
-                <Productcard />
-              </Grid>
-              <Grid item xs={6} sm={4}>
-                <Productcard />
-              </Grid>
-              <Grid item xs={6} sm={4}>
-                <Productcard />
-              </Grid>
+              {ProductData?.map((data, index) => (
+                
+                <Grid item xs={6} sm={4} key={data.id}>
+                  <Link
+                  className="landinLinks"
+                    to={{
+                      pathname: `/products/${data.id}`,
+                   
+                    }}
+                  >
+                    <Productcard data={data} />
+                  </Link>
+                </Grid>
+              ))}
             </Grid>
           </Box>
         </Grid>
@@ -56,9 +55,7 @@ const LandingStore = () => {
               </Grid>
             </Grid>
           </Box>
-          <Typography className="LandingStoreHeading mt-30">
-            
-          </Typography>
+          <Typography className="LandingStoreHeading mt-30"></Typography>
         </Grid>
       </Grid>
     </Box>
