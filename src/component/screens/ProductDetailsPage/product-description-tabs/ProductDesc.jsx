@@ -19,7 +19,7 @@ function ProductDesc({ product }) {
           width: "100%",
           typography: "body1",
           mt: "50px",
-          mb:"30px",
+          mb: "30px",
         }}
       >
         <TabContext value={value}>
@@ -87,13 +87,13 @@ function ProductDesc({ product }) {
                 {product.DescriptionDetailsList.map((items) => (
                   <Box className="list-box">
                     <ListItem className="list-items">
-                    {items.listItemOne}
+                      {items.listItemOne}
                     </ListItem>
                     <ListItem className="list-items">
-                    {items.listItemTwo}
+                      {items.listItemTwo}
                     </ListItem>
                     <ListItem className="list-items">
-                    {items.listItemThree}
+                      {items.listItemThree}
                     </ListItem>
                   </Box>
                 ))}
@@ -107,7 +107,7 @@ function ProductDesc({ product }) {
               </Box>
             </TabPanel>
 
-            <TabPanel value="2" >
+            <TabPanel value="2">
               <Box className="tabs1">
                 <Box>
                   <Typography className="desc-head">
@@ -124,13 +124,13 @@ function ProductDesc({ product }) {
                 {product.DescriptionDetailsList.map((items) => (
                   <Box className="list-box">
                     <ListItem className="list-items">
-                    {items.listItemOne}
+                      {items.listItemOne}
                     </ListItem>
                     <ListItem className="list-items">
-                    {items.listItemTwo}
+                      {items.listItemTwo}
                     </ListItem>
                     <ListItem className="list-items">
-                    {items.listItemThree}
+                      {items.listItemThree}
                     </ListItem>
                   </Box>
                 ))}
@@ -144,7 +144,7 @@ function ProductDesc({ product }) {
               </Box>
             </TabPanel>
 
-            <TabPanel value="3" >
+            <TabPanel value="3">
               <Box className="tabs1">
                 <Box>
                   <Typography className="desc-head">
@@ -161,13 +161,13 @@ function ProductDesc({ product }) {
                 {product.DescriptionDetailsList.map((items) => (
                   <Box className="list-box">
                     <ListItem className="list-items">
-                    {items.listItemOne}
+                      {items.listItemOne}
                     </ListItem>
                     <ListItem className="list-items">
-                    {items.listItemTwo}
+                      {items.listItemTwo}
                     </ListItem>
                     <ListItem className="list-items">
-                    {items.listItemThree}
+                      {items.listItemThree}
                     </ListItem>
                   </Box>
                 ))}
@@ -180,7 +180,7 @@ function ProductDesc({ product }) {
                 ))}
               </Box>
             </TabPanel>
-            <TabPanel value="4" >
+            <TabPanel value="4">
               <Box className="tabs1">
                 <Box>
                   <Typography className="desc-head">Reviews</Typography>
@@ -195,13 +195,13 @@ function ProductDesc({ product }) {
                 {product.DescriptionDetailsList.map((items) => (
                   <Box className="list-box">
                     <ListItem className="list-items">
-                    {items.listItemOne}
+                      {items.listItemOne}
                     </ListItem>
                     <ListItem className="list-items">
-                    {items.listItemTwo}
+                      {items.listItemTwo}
                     </ListItem>
                     <ListItem className="list-items">
-                    {items.listItemThree}
+                      {items.listItemThree}
                     </ListItem>
                   </Box>
                 ))}

@@ -11,9 +11,14 @@ import Rating from "@mui/material/Rating";
 import Counter from "./counter/Counter";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
-
+import { addtoCart } from "../../../features/slice/cartSlice";
+import { useDispatch } from "react-redux";
 function Productzoompinch({product}) {
-  
+  const dispatch=useDispatch();
+
+  const handleAddToCart = () => {
+    dispatch(addtoCart(product));
+  };
   return (
     <>
       <Box>
@@ -31,17 +36,17 @@ function Productzoompinch({product}) {
                 </Box>
                 ))}
 
-                {product.price.map((items)=>(
+             
                   <Box className="priceBox mt-10">
                     <Typography variant="caption" className="discountedPrice mt-10">
-                    {items.newPrice}
+                    {product.price}
                     </Typography>
                     <Typography variant="caption" className="realPrice mt-10">
-                      {items.oldPrice}
+                      {product.oldPrice}
                     </Typography>
                   </Box>
                
-                  ))}
+            
             <Box className="card-desc-lorem-box mt-10">
               <Typography className="card-desc-lorem">
              {product.text}
@@ -55,6 +60,7 @@ function Productzoompinch({product}) {
                 variant="outlined"
                 className="btn hvr-bounce-to-right"
                 startIcon={<AddShoppingCartIcon />}
+                onClick={handleAddToCart}
               >
                 ADD TO CART
               </Button>

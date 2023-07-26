@@ -12,7 +12,7 @@ const ProductZoom = ({product}) => {
   const [nav2, setNav2] = useState(null);
   const [zoomValue, setZoom] = useState(false);
 
-  const [selectedImage, setSelectedImage] = useState(product.img);
+  const [selectedImage, setSelectedImage] = useState(product.image);
 
   useEffect(() => {
     setNav1(slider1);
@@ -20,8 +20,8 @@ const ProductZoom = ({product}) => {
   }, []);
 
   useEffect(()=>{
-    setSelectedImage(product.img)
-  },[product.img])
+    setSelectedImage(product.image)
+  },[product.image])
 
   const handleZoomIn = (zoomIn) => {
     zoomIn(0.4); // Increase the zoom level by 0.2 (adjust as needed)
@@ -44,7 +44,7 @@ const ProductZoom = ({product}) => {
   let slider2 = null;
 
   const data = [
-    { id: 1, img: product.img },
+    { id: 1, img: product.image },
     { id: 2, img: product.smImg1 },
     { id: 3, img: product.smImg2 },
   ];

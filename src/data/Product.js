@@ -1,11 +1,10 @@
-import { Description } from "@mui/icons-material";
 
 export const ProductData = [
   {
     id: 1,
     name: "redchiefs",
     img: "https://rukminim1.flixcart.com/image/850/1000/xif0q/shoe/z/n/w/-original-imagg3aaskgnqg6x.jpeg?q=90",
-    smImg1:
+  smImg1:
       "https://rukminim2.flixcart.com/image/832/832/kdnf98w0hlty2aw-0/men-footwear/c/g/f/8-1-rc3545-001-red-chief-black-original-imafumqrpzgcpkeh.jpeg?q=70",
     smImg2:
       "https://rukminim2.flixcart.com/image/832/832/kdnf98w0hlty2aw-0/men-footwear/z/c/m/8-1-rc3545-001-red-chief-black-original-imafumqvkvemvanz.jpeg?q=70",

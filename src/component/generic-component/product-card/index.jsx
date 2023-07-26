@@ -8,7 +8,7 @@ const Productcard = ({ data }) => {
     <Box className="card">
       <Box
         className="card-img-container"
-        sx={{ backgroundImage: `url(${data.img})` }}
+        sx={{ backgroundImage: `url(${data.image})` }}
       >
         <Box className="card-hover">
           <Box className="like_btn">
@@ -18,13 +18,13 @@ const Productcard = ({ data }) => {
         </Box>
       </Box>
       <Box className="card-content-container">
+      <Typography className="title mt-5">{data.name}</Typography>
         <Typography className="categories">{data.category}</Typography>
 
-        <Typography className="title mt-5">{data.name}</Typography>
-        {data.price?.map((value, index) => (
-          <Typography className="price mt-10">{value.oldPrice}</Typography>
+     
+          <Typography className="price mt-10">Rs : {data.price}</Typography>
 
-        ))}
+
       </Box>
     </Box>
   );

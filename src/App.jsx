@@ -7,9 +7,14 @@ import Store from "./component/screens/Store";
 import Products from "./component/screens/ProductDetailsPage";
 import Blog from "./component/screens/blogPage/index"
 import ScrollToTop from "./component/scrollToTop/ScrollToTop";
+import Carts from "./component/screens/addtocart/Cart"
+import { Provider } from "react-redux";
+import {store} from "./component/features/store/store"
+
 const App = () => {
   return (
     <>
+    <Provider store={store}>
     <ScrollToTop/>
       <Header />
       <Routes>
@@ -17,9 +22,10 @@ const App = () => {
         <Route exact path="/store" element={<Store />}/>
         <Route exact path="/products/:id" element={<Products />}/>
         <Route exact path="/blog" element={<Blog />}/>
-
+        <Route exact path ="carts" element={<Carts/>} />
       </Routes>
       <Footer/>
+    </Provider>
     
     </>
   );

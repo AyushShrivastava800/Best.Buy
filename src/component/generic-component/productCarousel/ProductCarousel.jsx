@@ -7,9 +7,10 @@ import Slider from "react-slick";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import Productcard from "../../generic-component/product-card";
-import { ProductData } from "../../../data/Product";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 function ProductCarousel() {
+  const {cartItems}=useSelector((state)=>state.cart)
   const settings = {
     dots: true,
     autoplay: false,
@@ -55,7 +56,7 @@ function ProductCarousel() {
         </Box>
         <Box>
           <Slider {...settings}>
-            {ProductData.map((data, index) => (
+            {cartItems.map((data, index) => (
               <Box>
                 <Link to={{ pathname: `/products/${data.id}` }} className="carouseLinks">
                   <Productcard data={data} />
