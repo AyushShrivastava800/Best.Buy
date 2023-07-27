@@ -57,7 +57,7 @@ function Productzoompinch({product}) {
               </Typography>
             </Box>
             <Box className="counterBox mt-10">
-              <Counter />
+              <Counter product={product} />
             </Box>
             <Box className="button-Box mt-10 ">
               <Button

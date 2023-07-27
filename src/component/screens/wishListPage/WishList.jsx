@@ -11,10 +11,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { removeWishItem, clearWishList } from "../../features/slice/wishSlice";
 import { addtoCart } from "../../features/slice/cartSlice";
 export default function SpanningTable() {
-  const { newlist ,amount} = useSelector((store) => store.wishList);
+  const { newlist, amount } = useSelector((store) => store.wishList);
   const dispatch = useDispatch();
-  
- 
+
   return (
     <Box>
       <Box className="wishlistPage">
@@ -26,7 +25,8 @@ export default function SpanningTable() {
           <Container>
             <Box className="mt-30">
               <Typography className="wishHeading">
-                Your Cart has {amount} items
+              {amount==0?"MAKE A WISH":`YOU HAVE ${amount}`} {amount>1?`WISHES`:'WISH'}
+               
               </Typography>
             </Box>
             <Box className="mt-30 mb-30 wishTable">
@@ -34,10 +34,33 @@ export default function SpanningTable() {
                 <Table sx={{ minWidth: 700 }} aria-label="spanning table">
                   <TableHead>
                     <TableRow>
+                      <TableCell colSpan={4}>
+                        <Box className="shareBox mt-30">
+                          <Typography className="share text-capitalize">
+                            Share:
+                          </Typography>
+                          <Box className="shareBox-icons">
+                            <Box className="shareIcon">
+                              <i class="fa-brands fa-facebook-f  fa-lg "></i>
+                            </Box>
+                            <Box className="shareIcon">
+                              <i class="fa-brands fa-pinterest  fa-lg"></i>
+                            </Box>
+                            <Box className="shareIcon">
+                              <i class="fa-brands fa-instagram  fa-lg"></i>
+                            </Box>
+                            <Box className="shareIcon">
+                              <i class="fa-brands fa-twitter fa-lg"></i>
+                            </Box>
+                          </Box>
+                        </Box>
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
                       <TableCell className="tableHeading">Products</TableCell>
                       <TableCell className="tableHeading">Name</TableCell>
                       <TableCell className="tableHeading">Price</TableCell>
-                      <TableCell className="tableHeading" align="center" >
+                      <TableCell className="tableHeading" align="center">
                         Add to Cart
                       </TableCell>
                     </TableRow>
@@ -78,7 +101,7 @@ export default function SpanningTable() {
                               className="hvr-bounce-to-right clearbtn"
                               onClick={() => dispatch(addtoCart(row))}
                             >
-                            ADD TO CART
+                              ADD TO CART
                             </Button>
                           </Box>
                         </TableCell>

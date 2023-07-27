@@ -58,14 +58,27 @@ const cartSlice = createSlice({
     },
     Increase: (state, { payload }) => {
       const newCarts = state.newCart.find((item) => item.id === payload);
-      console.log(current(newCarts))
       newCarts.amount =newCarts.amount + 1; //Products amount
       newCarts.subtotal = newCarts.amount * newCarts.price;
+      localStorage.setItem(
+        'item',
+        JSON.stringify({
+          products: state.newCart,
+    
+        }),
+      );
     },
     Decrease: (state, { payload }) => {
       const newCarts = state.newCart.find((item) => item.id === payload);
       newCarts.amount = newCarts.amount - 1; //Products amount
       newCarts.subtotal = newCarts.price / newCarts.amount;
+      localStorage.setItem(
+        'item',
+        JSON.stringify({
+          products: state.newCart,
+    
+        }),
+      );
     },
     calculateTotals: (state) => {
       let total = 0;

@@ -17,7 +17,12 @@ import {
   Decrease,
 } from "../../features/slice/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
+
+
+
+
 export default function CartTable({ ProductData }) {
+ 
   const { total } = useSelector((store) => store.cart);
   const dispatch = useDispatch();
 
@@ -93,6 +98,7 @@ export default function CartTable({ ProductData }) {
                   <Box>
                     <Typography className="p-count-icon">
                       {row.amount}
+                   
                     </Typography>
                   </Box>
                   <Box>
