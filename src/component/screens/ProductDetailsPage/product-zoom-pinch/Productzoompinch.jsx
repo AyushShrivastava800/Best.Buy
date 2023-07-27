@@ -12,12 +12,16 @@ import Counter from "./counter/Counter";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import { addtoCart } from "../../../features/slice/cartSlice";
+import {addWishlist} from "../../../features/slice/wishSlice"
 import { useDispatch } from "react-redux";
 function Productzoompinch({product}) {
   const dispatch=useDispatch();
 
   const handleAddToCart = () => {
     dispatch(addtoCart(product));
+  };
+  const handleAddToWishList = () => {
+    dispatch(addWishlist(product));
   };
   return (
     <>
@@ -39,10 +43,10 @@ function Productzoompinch({product}) {
              
                   <Box className="priceBox mt-10">
                     <Typography variant="caption" className="discountedPrice mt-10">
-                    {product.price}
+                    ₹ {product.price}
                     </Typography>
                     <Typography variant="caption" className="realPrice mt-10">
-                      {product.oldPrice}
+                    ₹ {product.oldPrice}
                     </Typography>
                   </Box>
                
@@ -66,7 +70,9 @@ function Productzoompinch({product}) {
               </Button>
               <Box variant="text" className="wishList">
                 <FavoriteBorderOutlinedIcon className="heartIcon" />
-                <Typography className="text-capitalize">
+                <Typography className="text-capitalize"
+                 onClick={handleAddToWishList}
+                 >
                 Add to wishlist
                 </Typography>
               </Box>

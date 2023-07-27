@@ -10,6 +10,7 @@ import ScrollToTop from "./component/scrollToTop/ScrollToTop";
 import Carts from "./component/screens/addtocart/Cart"
 import { Provider } from "react-redux";
 import {store} from "./component/features/store/store"
+import WishList from "./component/screens/wishListPage/WishList";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         <Route exact path="/products/:id" element={<Products />}/>
         <Route exact path="/blog" element={<Blog />}/>
         <Route exact path ="carts" element={<Carts/>} />
+        <Route exact path='wishlist' element={<WishList/>}/>
       </Routes>
       <Footer/>
     </Provider>

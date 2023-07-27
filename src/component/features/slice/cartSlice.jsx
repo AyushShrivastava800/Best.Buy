@@ -5,10 +5,14 @@ import { Product } from "../../../data/cartProducts";
 const cartFromLocalStorage = JSON.parse(localStorage.getItem('item'));
 const initialCartItems = cartFromLocalStorage ? cartFromLocalStorage.products : [];
 
+ 
+
+
+
 const initialState = {
   cartItems: Product,
   newCart:initialCartItems,
-  amount: 0,
+  amount:initialCartItems.length,
   total: 0,
   isloading: 0,
 };
@@ -31,6 +35,7 @@ const cartSlice = createSlice({
         'item',
         JSON.stringify({
           products: state.newCart,
+    
         }),
       );
     
@@ -47,6 +52,7 @@ const cartSlice = createSlice({
         'item',
         JSON.stringify({
           products: state.newCart,
+      
         }),
       ); 
     },

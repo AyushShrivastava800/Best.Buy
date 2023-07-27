@@ -8,6 +8,7 @@ import { useEffect } from "react";
 function Carts() {
   const ProductData = useSelector((state) => state.cart);
 const dispatch=useDispatch();
+
 useEffect(() => {
   dispatch(calculateTotals())
 }, [ProductData.newCart])

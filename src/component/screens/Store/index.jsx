@@ -86,13 +86,7 @@ function Store() {
                   <Grid container spacing={1} className="productsGrid">
                     {cartItems?.map((data, index) => (
                       <Grid item md={3} sm={4} xs={6}>
-                        <Link
-                          className="cardLinks"
-                          key={index}
-                          to={{ pathname: `/products/${data.id}` }}
-                        >
-                          <Productcard data={data} />
-                        </Link>
+                        <Productcard data={data} />
                       </Grid>
                     ))}
                   </Grid>

@@ -10,7 +10,7 @@ import Productcard from "../../generic-component/product-card";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 function ProductCarousel() {
-  const {cartItems}=useSelector((state)=>state.cart)
+  const { cartItems } = useSelector((state) => state.cart);
   const settings = {
     dots: true,
     autoplay: false,
@@ -58,9 +58,7 @@ function ProductCarousel() {
           <Slider {...settings}>
             {cartItems.map((data, index) => (
               <Box>
-                <Link to={{ pathname: `/products/${data.id}` }} className="carouseLinks">
-                  <Productcard data={data} />
-                </Link>
+                <Productcard data={data} />
               </Box>
             ))}
           </Slider>

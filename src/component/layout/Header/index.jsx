@@ -11,8 +11,10 @@ import classNames from "classnames";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+
 const Header = () => {
   const ProductData = useSelector((state) => state.cart);
+  const {amount} = useSelector((state) => state.wishList);
 
   const [isScrolled, setIsScrolled] = useState(false);
   const Mobilematches = useMediaQuery("(max-width: 600px)");
@@ -82,8 +84,11 @@ const Header = () => {
                     </Badge>
                   </Box>
                   <Box className="navIcon">
-                    <Badge badgeContent={0}>
-                      <FavoriteBorderOutlinedIcon />
+                    <Badge badgeContent={amount}>
+                    <Link to={{ pathname: `/wishlist` }}>
+                        <FavoriteBorderOutlinedIcon className="cartIcon" />
+                      </Link>
+                    
                     </Badge>
                   </Box>
                 </Box>

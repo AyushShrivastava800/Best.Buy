@@ -4,11 +4,10 @@ import Productcard from "../../generic-component/product-card";
 import SideProductCard from "../../generic-component/sidebox-product-card";
 // import { ProductData } from "../../../data/Product";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 
 const LandingStore = () => {
   const { cartItems, amount, total } = useSelector((store) => store.cart);
-    return (
+  return (
     <Box className="mt-50 mb-50">
       <Grid container spacing={2}>
         <Grid item xs={12} sm={9}>
@@ -20,17 +19,8 @@ const LandingStore = () => {
           <Box className="landingProducts mt-30 mb-30">
             <Grid container spacing={1}>
               {cartItems?.map((data, index) => (
-                
                 <Grid item xs={6} sm={4} key={data.id}>
-                  <Link
-                  className="landinLinks"
-                    to={{
-                      pathname: `/products/${data.id}`,
-                   
-                    }}
-                  >
-                    <Productcard data={data} />
-                  </Link>
+                  <Productcard data={data} />
                 </Grid>
               ))}
             </Grid>
@@ -43,16 +33,16 @@ const LandingStore = () => {
           <Box className="landingProducts mt-30 mb-30">
             <Grid container spacing={1}>
               <Grid item xs={12}>
-                <SideProductCard  />
+                <SideProductCard />
               </Grid>
               <Grid item xs={12}>
-                <SideProductCard/>
+                <SideProductCard />
               </Grid>
               <Grid item xs={12}>
-                <SideProductCard/>
+                <SideProductCard />
               </Grid>
               <Grid item xs={12}>
-                <SideProductCard/>
+                <SideProductCard />
               </Grid>
             </Grid>
           </Box>
