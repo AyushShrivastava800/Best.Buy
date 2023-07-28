@@ -2,8 +2,11 @@ import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 import Productcard from "../../generic-component/product-card";
 import SideProductCard from "../../generic-component/sidebox-product-card";
+// import { ProductData } from "../../../data/Product";
+import { useSelector } from "react-redux";
 
 const LandingStore = () => {
+  const { cartItems, amount, total } = useSelector((store) => store.cart);
   return (
     <Box className="mt-50 mb-50">
       <Grid container spacing={2}>
@@ -15,24 +18,11 @@ const LandingStore = () => {
           </Grid>
           <Box className="landingProducts mt-30 mb-30">
             <Grid container spacing={1}>
-              <Grid item xs={6} sm={4}>
-                <Productcard />
-              </Grid>
-              <Grid item xs={6} sm={4}>
-                <Productcard />
-              </Grid>
-              <Grid item xs={6} sm={4}>
-                <Productcard />
-              </Grid>
-              <Grid item xs={6} sm={4}>
-                <Productcard />
-              </Grid>
-              <Grid item xs={6} sm={4}>
-                <Productcard />
-              </Grid>
-              <Grid item xs={6} sm={4}>
-                <Productcard />
-              </Grid>
+              {cartItems?.map((data, index) => (
+                <Grid item xs={6} sm={4} key={data.id}>
+                  <Productcard data={data} />
+                </Grid>
+              ))}
             </Grid>
           </Box>
         </Grid>
@@ -56,9 +46,7 @@ const LandingStore = () => {
               </Grid>
             </Grid>
           </Box>
-          <Typography className="LandingStoreHeading mt-30">
-            
-          </Typography>
+          <Typography className="LandingStoreHeading mt-30"></Typography>
         </Grid>
       </Grid>
     </Box>

@@ -1,0 +1,67 @@
+.CartPage {
+  // height: 100vh;
+
+  .banner {
+    .bannerImg {
+      height: 300px;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-image: url(../../assets/images/ales-nesetril-Im7lZjxeLhg-unsplash.jpg);
+    }
+  }
+  .cartContainer {
+    .CartHeading {
+      font-size: $h3-font-size;
+      text-align: center;
+    }
+    .cartTable {
+      .tableHeading {
+        font-size: $font-size-lg;
+      }
+      .tableText {
+        font-size: $font-size-base;
+    }
+   
+      .product-counter{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        gap: 10px;
+      
+      }
+      .productImage {
+        height: 100px;
+      }
+      .Removebtn {
+        max-width: 15.81rem;
+        width: 100%;
+        color: $primary;
+        border-color: $primary;
+        font-size: $body3-font-size;
+        justify-content: flex-start;
+      }
+    }
+.p-increment,.p-decrement{
+  &:hover{
+    cursor: pointer;
+  }
+}
+    .proceedbtn {
+      height: 3.5rem;
+      max-width: 15.81rem;
+      width: 100%;
+      color: $white;
+      border-color: $primary;
+      background-color: $primary;
+    }
+    .Continuebtn {
+      height: 3.5rem;
+      max-width: 15.81rem;
+      width: 100%;
+      color: $primary;
+      border-color: $primary;
+    text-decoration: none !important;
+    }
+  }
+}

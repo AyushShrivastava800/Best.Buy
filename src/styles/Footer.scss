@@ -20,11 +20,11 @@
     align-items: flex-start;
     gap: 10px;
     padding: 0 47px;
-    @media only screen and (max-width: 900px) {
-      .midSectionLinks {
-        margin: 20px 0;
-        padding: 0px 0px !important;
-      }
+  }
+  @media only screen and (max-width: 900px) {
+    .midSectionLinks {
+      margin: 20px 0;
+      padding: 0px 0px !important;
     }
   }
   .FaddedText {
@@ -41,6 +41,10 @@
     border-radius: 50%;
     height: 40px;
     width: 40px;
+    &:hover{
+      background-color: $primary;
+      cursor: pointer;
+    }
   }
 
   .cardsContainer {

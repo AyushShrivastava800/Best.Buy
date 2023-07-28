@@ -1,25 +1,27 @@
 import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import { Grid, Box } from "@mui/material";
-import img1 from "../../../../../assets/images/p-4.jpg";
-import img2 from "../../../../../assets/images/p-5.jpg";
-import img3 from "../../../../../assets/images/p-6.jpg";
+
 import { Container } from "@mui/system";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import ZoomOutMapIcon from "@mui/icons-material/ZoomOutMap";
 import ZoomInMapIcon from "@mui/icons-material/ZoomInMap";
 
-const ProductZoom = () => {
+const ProductZoom = ({product}) => {
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
   const [zoomValue, setZoom] = useState(false);
 
-  const [selectedImage, setSelectedImage] = useState(img1);
+  const [selectedImage, setSelectedImage] = useState(product.image);
 
   useEffect(() => {
     setNav1(slider1);
     setNav2(slider2);
   }, []);
+
+  useEffect(()=>{
+    setSelectedImage(product.image)
+  },[product.image])
 
   const handleZoomIn = (zoomIn) => {
     zoomIn(0.4); // Increase the zoom level by 0.2 (adjust as needed)
@@ -42,9 +44,9 @@ const ProductZoom = () => {
   let slider2 = null;
 
   const data = [
-    { id: 1, img: img1 },
-    { id: 2, img: img2 },
-    { id: 3, img: img3 },
+    { id: 1, img: product.image },
+    { id: 2, img: product.smImg1 },
+    { id: 3, img: product.smImg2 },
   ];
 
   const handleImageClick = (image) => {

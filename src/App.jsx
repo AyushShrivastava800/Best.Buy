@@ -6,17 +6,28 @@ import Footer from "./component/screens/Footer/index";
 import Store from "./component/screens/Store";
 import Products from "./component/screens/ProductDetailsPage";
 import Blog from "./component/screens/blogPage/index"
+import ScrollToTop from "./component/scrollToTop/ScrollToTop";
+import Carts from "./component/screens/addtocart/Cart"
+import { Provider } from "react-redux";
+import {store} from "./component/features/store/store"
+import WishList from "./component/screens/wishListPage/WishList";
+
 const App = () => {
   return (
     <>
+    <Provider store={store}>
+    <ScrollToTop/>
       <Header />
       <Routes>
         <Route exact path="/" element={<LandingPage />} />
         <Route exact path="/store" element={<Store />}/>
-        <Route exact path="/products" element={<Products />}/>
+        <Route exact path="/products/:id" element={<Products />}/>
         <Route exact path="/blog" element={<Blog />}/>
+        <Route exact path ="carts" element={<Carts/>} />
+        <Route exact path='wishlist' element={<WishList/>}/>
       </Routes>
       <Footer/>
+    </Provider>
     
     </>
   );

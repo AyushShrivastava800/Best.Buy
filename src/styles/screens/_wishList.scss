@@ -1,0 +1,79 @@
+.wishlistPage {
+  .banner {
+    .bannerImg {
+      height: 300px;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-image: url(../../assets/images/ales-nesetril-Im7lZjxeLhg-unsplash.jpg);
+    }
+  }
+  .wishContainer {
+    .wishHeading {
+      font-size: $h3-font-size;
+      text-align: center;
+    }
+    .productImage{
+        height: 100px;
+    }
+    .wishTable {
+        .tableHeading {
+          font-size: $font-size-lg;
+        }
+        .tableText {
+          font-size: $font-size-base;
+      }
+      .shareBox {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 2rem;
+        .share {
+          color: $gray;
+        }
+        .shareBox-icons {
+          display: flex;
+          gap: 10px;
+          .shareIcon {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            border: 1px solid $light-gray;
+    
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &:hover {
+              background-color: $primary;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+
+
+
+  }
+   .Removebtn,.clearbtn {
+    max-width: 15.81rem;
+    width: 100%;
+    color: $primary;
+    border-color: $primary;
+    font-size: $body3-font-size;
+    justify-content: flex-start;
+  }
+  .clearbtn{
+   font-size: $font-size-lg;
+   justify-content: center;
+  }
+  .addtocartbtn{
+    max-width: 15.81rem;
+    width: 100%;
+    color: $primary;
+    border-color: $primary;
+    font-size: $font-size-lg;
+    justify-content:center;
+  }
+}
+}

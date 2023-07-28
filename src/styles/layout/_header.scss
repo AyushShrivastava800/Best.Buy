@@ -74,7 +74,7 @@
 
         .navIcon {
             display: block;
-            color: $white ;
+            color: $white  ;
             text-decoration: none;
             padding: 0.5rem 1.5rem;
 
@@ -88,6 +88,12 @@
                 .MuiBadge-badge {
                     color: $white;
 
+                }
+            }
+            .cartIcon{
+                color: $white;
+                &:hover{
+                    color: $primary;
                 }
             }
         }
