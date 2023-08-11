@@ -33,19 +33,19 @@ export default function CartTable({ ProductData }) {
 
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 500 }} aria-label="spanning table">
+      <Table sx={{ minWidth: 400 }} aria-label="spanning table">
         <TableHead>
           <TableRow>
             <TableCell className="tableHeading">Cart Items</TableCell>
-            <TableCell></TableCell>
+            <TableCell className="tableHeading"></TableCell>
 
-            <TableCell className="tableHeading" align="right">
+            <TableCell className="tableHeading " align="right">
               Unit price
             </TableCell>
-            <TableCell className="tableHeading" align="right">
+            <TableCell className="tableHeading " align="right">
               Qty
             </TableCell>
-            <TableCell className="tableHeading" align="right">
+            <TableCell className="tableHeading " align="right">
               Sub Total
             </TableCell>
           </TableRow>
@@ -74,11 +74,11 @@ export default function CartTable({ ProductData }) {
                   </Box>
                 </Box>
               </TableCell>
-
-              <TableCell align="right" className="tableText">
+            
+              <TableCell align="right" className="tableText ">
                 {row.price}
               </TableCell>
-              <TableCell align="right" className="tableText">
+              <TableCell align="right" className="tableText ">
                 <Box className="product-counter">
                   <Box>
                     <Typography
@@ -113,7 +113,7 @@ export default function CartTable({ ProductData }) {
                 </Box>
               </TableCell>
 
-              <TableCell align="right" className="tableText">
+              <TableCell align="right" className="tableText ">
                 {row.subtotal.toFixed(2)}
               </TableCell>
             </TableRow>

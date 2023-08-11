@@ -1,0 +1,204 @@
+{
+  "Users": [
+    {
+      "name": "akash",
+      "email": "dawdawd@d",
+      "password": "123",
+      "gender": "female",
+      "city": "Gwalior",
+      "acceptedTerms": true,
+      "id": 1
+    },
+    {
+      "name": "akash",
+      "email": "dawdawd@d",
+      "password": "123",
+      "gender": "female",
+      "city": "Gwalior",
+      "acceptedTerms": true,
+      "id": 2
+    },
+    {
+      "name": "akash",
+      "email": "dawdawd@d",
+      "password": "123",
+      "gender": "female",
+      "city": "Gwalior",
+      "acceptedTerms": true,
+      "id": 3
+    },
+    {
+      "name": "adwad",
+      "email": "dsdsd@dds",
+      "password": "45455",
+      "gender": "male",
+      "city": "Gwalior",
+      "acceptedTerms": true,
+      "id": 4
+    },
+    {
+      "name": "htdfh",
+      "email": "dsdsd@dds",
+      "password": "1135",
+      "gender": "male",
+      "city": "Indore",
+      "acceptedTerms": true,
+      "id": 5
+    },
+    {
+      "name": "adwad",
+      "email": "megha.koshti@clecotech.com",
+      "password": "45",
+      "gender": "female",
+      "city": "Gwalior",
+      "acceptedTerms": true,
+      "id": 6
+    },
+    {
+      "name": "adwad",
+      "email": "dawdawd@d",
+      "password": "123",
+      "gender": "female",
+      "city": "Gwalior",
+      "acceptedTerms": true,
+      "id": 7
+    },
+    {
+      "values": {
+        "name": "adwad",
+        "email": "dawdawd@d",
+        "password": "123",
+        "gender": "female",
+        "city": "Gwalior",
+        "acceptedTerms": true
+      },
+      "id": 8
+    },
+    {
+      "name": "adwad",
+      "email": "dawdawd@d",
+      "password": "123",
+      "gender": "female",
+      "city": "Gwalior",
+      "acceptedTerms": true,
+      "id": 9
+    },
+    {
+      "name": "adwad",
+      "email": "dawdawd@d",
+      "password": "123",
+      "gender": "female",
+      "city": "Gwalior",
+      "acceptedTerms": true,
+      "id": 10
+    },
+    {
+      "name": "adwad",
+      "email": "dsdsd@dds",
+      "password": "123",
+      "gender": "male",
+      "city": "Gwalior",
+      "acceptedTerms": true,
+      "id": 11
+    },
+    {
+      "name": "d",
+      "email": "megha.koshti@clecotech.com",
+      "password": "99789",
+      "gender": "female",
+      "city": "Gwalior",
+      "acceptedTerms": true,
+      "id": 12
+    },
+    {
+      "name": "d",
+      "email": "megha.koshti@clecotech.com",
+      "password": "99789",
+      "gender": "female",
+      "city": "Gwalior",
+      "acceptedTerms": true,
+      "id": 13
+    },
+    {
+      "name": "d",
+      "email": "megha.koshti@clecotech.com",
+      "password": "99789",
+      "gender": "female",
+      "city": "Gwalior",
+      "acceptedTerms": true,
+      "id": 14
+    },
+    {
+      "name": "akash",
+      "email": "dawdawd@d",
+      "password": "789456",
+      "gender": "female",
+      "city": "Bhopal",
+      "acceptedTerms": true,
+      "id": 15
+    },
+    {
+      "name": "akash",
+      "email": "dawdawd@d",
+      "password": "789456",
+      "gender": "female",
+      "city": "Bhopal",
+      "acceptedTerms": true,
+      "id": 16
+    },
+    {
+      "name": "adwad",
+      "email": "dawdawd@d",
+      "password": "123",
+      "gender": "female",
+      "city": "Bhopal",
+      "acceptedTerms": true,
+      "id": 17
+    },
+    {
+      "name": "adwad",
+      "email": "dawdawd@d",
+      "password": "123",
+      "gender": "female",
+      "city": "Bhopal",
+      "acceptedTerms": true,
+      "id": 18
+    },
+    {
+      "name": "akash",
+      "email": "test@gmail.com",
+      "password": "789456123",
+      "gender": "male",
+      "city": "Bhopal",
+      "acceptedTerms": true,
+      "id": 19
+    },
+    {
+      "name": "dvsvsv",
+      "email": "ayush.shrivastava@clecotech.com",
+      "password": "456",
+      "gender": "male",
+      "city": "Indore",
+      "acceptedTerms": true,
+      "id": 20
+    },
+    {
+      "name": "adwad",
+      "email": "test@gmail.com4",
+      "password": "123",
+      "gender": "female",
+      "city": "Gwalior",
+      "acceptedTerms": true,
+      "id": 21
+    },
+    {
+      "name": "adwad",
+      "email": "megha.koshti@cle5cotech.com",
+      "password": "789",
+      "gender": "other",
+      "city": "Gwalior",
+      "acceptedTerms": true,
+      "id": 22
+    }
+  ]
+}

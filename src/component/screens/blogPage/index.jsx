@@ -15,19 +15,32 @@ import Button from "@mui/material/Button";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import BlogCarousel from "../../generic-component/blogCarosel/BlogCarousel";
 import Tooltip from "@mui/material/Tooltip";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import { useDispatch } from "react-redux";
+import { AddPost } from "../../features/slice/BlogSlice";
 const theme = createTheme({
   palette: {
     primary: {
       main: "#cc9966",
     },
-    // secondary: {
-    //   // This is green.A700 as hex.
-    //   // main: '#11cb5f',
-    // },
   },
 });
+const initialValues = {
+  name: "",
+  email: "",
+  message: "",
+};
 
-function index() {
+function Index() {
+  const dispatch=useDispatch();
+  
+  const handlePost = (values,props) => {
+    dispatch(AddPost(values,props))
+    if(! props.isSubmitting){
+      props.resetForm();
+    }
+  };
+
   return (
     <Box>
       <Box className="blogPage">
@@ -107,7 +120,7 @@ function index() {
                 <Box>
                   <Box className="quoteContainer mt-18">
                     <Container>
-                      <i class="fa-solid fa-quote-left"></i>
+                      <i className="fa-solid fa-quote-left"></i>
                       <Typography className="quote">
                         “We need to be willing to accept our feelings around an
                         event in order to fully gain the benefits, which are
@@ -173,13 +186,13 @@ function index() {
                   </Typography>
                   <Box className="iconContainer">
                     <Box className="iconBox">
-                      <i class="fa-brands fa-facebook icons"></i>
+                      <i className="fa-brands fa-facebook icons"></i>
                     </Box>
                     <Box className="iconBox">
-                      <i class="fa-brands fa-twitter icons"></i>
+                      <i className="fa-brands fa-twitter icons"></i>
                     </Box>
                     <Box className="iconBox">
-                      <i class="fa-brands fa-pinterest icons"></i>
+                      <i className="fa-brands fa-pinterest icons"></i>
                     </Box>
                   </Box>
                 </Box>
@@ -236,40 +249,80 @@ function index() {
                     </Box>
                   </Box>
                 </Box>
-                <Box class="replyContainer mt-30">
+
+                <Box className="replyContainer mt-30">
                   <Box className="replyheading">Leave a reply</Box>
                   <Box className="replyFormContainer mt-18">
-                    <ThemeProvider theme={theme}>
-                      <Box className="fieldBox">
-                        <TextField
-                          className="outlined-basic"
-                          fullWidth
-                          label="Your Name*"
-                        />
-                        <TextField
-                          className="outlined-basic"
-                          fullWidth
-                          label="Email*"
-                        />
-                      </Box>
-                      <Box>
-                        <TextField
-                          multiline={true}
-                          rows={6}
-                          className="outlined-basic messageBox"
-                          label="Your Message"
-                        />
-                      </Box>
-                    </ThemeProvider>
-                    <Box className="postCommentBtnBox mt-10 mb-18">
-                      <Button
-                        className="postCommentBtn hvr-bounce-to-right"
-                        variant="outlined"
-                        endIcon={<i class="fa-solid fa-arrow-right"></i>}
-                      >
-                        Post Comment
-                      </Button>
-                    </Box>
+                    <Formik initialValues={initialValues} onSubmit={handlePost}>
+                      {(props) => {
+                        return (
+                          <ThemeProvider theme={theme}>
+                            <Form>
+                              <Box className="fieldBox">
+                                <Field
+                                  className="outlined-basic"
+                                  as={TextField}
+                                  name="name"
+                                  label="Name"
+                                  type="text"
+                                  fullWidth
+                                  margin="dense"
+                                  helperText={<ErrorMessage name="name" />}
+                                  error={
+                                    props.errors.name && props.touched.name
+                                  }
+                                />
+
+                                <Field
+                                  className="outlined-basic"
+                                  as={TextField}
+                                  name="email"
+                                  label="email"
+                                  type="text"
+                                  fullWidth
+                                  margin="dense"
+                                  helperText={<ErrorMessage name="email" />}
+                                  error={
+                                    props.errors.email && props.touched.email
+                                  }
+                                />
+                              </Box>
+                              <Box>
+                                <Field
+                                  multiline={true}
+                                  rows={6}
+                                  className="outlined-basic"
+                                  as={TextField}
+                                  name="message"
+                                  label="message"
+                                  type="text"
+                                  fullWidth
+                                  margin="dense"
+                                  helperText={<ErrorMessage name="message" />}
+                                  error={
+                                    props.errors.message &&
+                                    props.touched.message
+                                  }
+                                />
+                              </Box>
+                              <Box className="postCommentBtnBox mt-10 mb-18">
+                                <Button
+                                  endIcon={
+                                    <i className="fa-solid fa-arrow-right"></i>
+                                  }
+                                  className="postCommentBtn hvr-bounce-to-right"
+                                  variant="outlined"
+                                  fullWidth
+                                  type="submit"
+                                >
+                                  Post Comment
+                                </Button>
+                              </Box>
+                            </Form>
+                          </ThemeProvider>
+                        );
+                      }}
+                    </Formik>
                   </Box>
                 </Box>
               </Grid>
@@ -358,4 +411,4 @@ function index() {
   );
 }
 
-export default index;
+export default Index;

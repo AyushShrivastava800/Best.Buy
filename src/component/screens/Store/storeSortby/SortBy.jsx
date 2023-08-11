@@ -1,18 +1,25 @@
-import * as React from 'react';
-import Button from '@mui/material/Button';
-import ClickAwayListener from '@mui/material/ClickAwayListener';
-import Grow from '@mui/material/Grow';
-import Paper from '@mui/material/Paper';
-import Popper from '@mui/material/Popper';
-import MenuItem from '@mui/material/MenuItem';
-import MenuList from '@mui/material/MenuList';
-import Stack from '@mui/material/Stack';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-
+import * as React from "react";
+import Button from "@mui/material/Button";
+import ClickAwayListener from "@mui/material/ClickAwayListener";
+import Grow from "@mui/material/Grow";
+import Paper from "@mui/material/Paper";
+import Popper from "@mui/material/Popper";
+import MenuItem from "@mui/material/MenuItem";
+import MenuList from "@mui/material/MenuList";
+import Stack from "@mui/material/Stack";
+import SortIcon from "@mui/icons-material/Sort";
+import {
+  sortLatest,
+  sortHighToLow,
+  sortLowToHigh,
+  Categoryfilter,
+} from "../../../features/slice/filterSortSlice";
+import { useDispatch } from "react-redux";
+import zIndex from "@mui/material/styles/zIndex";
 export default function MenuListComposition() {
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
-
+  const dispatch = useDispatch();
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
   };
@@ -26,10 +33,10 @@ export default function MenuListComposition() {
   };
 
   function handleListKeyDown(event) {
-    if (event.key === 'Tab') {
+    if (event.key === "Tab") {
       event.preventDefault();
       setOpen(false);
-    } else if (event.key === 'Escape') {
+    } else if (event.key === "Escape") {
       setOpen(false);
     }
   }
@@ -46,18 +53,17 @@ export default function MenuListComposition() {
 
   return (
     <Stack direction="row" spacing={2}>
-   
       <div>
         <Button
-          ref={anchorRef} className="sortBtn"
+          ref={anchorRef}
+          className="sortBtn"
           id="composition-button"
-          aria-controls={open ? 'composition-menu' : undefined}
-          aria-expanded={open ? 'true' : undefined}
+          aria-controls={open ? "composition-menu" : undefined}
+          aria-expanded={open ? "true" : undefined}
           aria-haspopup="true"
           onClick={handleToggle}
         >
-       Sort By
-       <KeyboardArrowDownIcon fontSize='small' />
+          <SortIcon />
         </Button>
         <Popper
           open={open}
@@ -66,26 +72,48 @@ export default function MenuListComposition() {
           placement="bottom-start"
           transition
           disablePortal
+          sx={{zIndex:'1'}}
         >
           {({ TransitionProps, placement }) => (
             <Grow
               {...TransitionProps}
               style={{
                 transformOrigin:
-                  placement === 'bottom-start' ? 'left top' : 'left bottom',
+                  placement === "bottom-start" ? "left top" : "left bottom",
               }}
             >
-              <Paper>
-                <ClickAwayListener onClickAway={handleClose}>
+              <Paper
+               
+              >
+                <ClickAwayListener onClickAway={handleClose} >
                   <MenuList
                     autoFocusItem={open}
                     id="composition-menu"
                     aria-labelledby="composition-button"
                     onKeyDown={handleListKeyDown}
+                 
                   >
-                    <MenuItem onClick={handleClose}>Profile</MenuItem>
-                    <MenuItem onClick={handleClose}>My account</MenuItem>
-                    <MenuItem onClick={handleClose}>Logout</MenuItem>
+                    <MenuItem
+                      onClick={() => {
+                        dispatch(sortLatest());
+                      }}
+                    >
+                      Latest
+                    </MenuItem>
+                    <MenuItem
+                      onClick={() => {
+                        dispatch(sortLowToHigh());
+                      }}
+                    >
+                      low to high
+                    </MenuItem>
+                    <MenuItem
+                      onClick={() => {
+                        dispatch(sortHighToLow());
+                      }}
+                    >
+                      high to low
+                    </MenuItem>
                   </MenuList>
                 </ClickAwayListener>
               </Paper>

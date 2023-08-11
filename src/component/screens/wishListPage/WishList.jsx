@@ -41,16 +41,16 @@ export default function SpanningTable() {
                           </Typography>
                           <Box className="shareBox-icons">
                             <Box className="shareIcon">
-                              <i class="fa-brands fa-facebook-f  fa-lg "></i>
+                              <i className="fa-brands fa-facebook-f  fa-lg "></i>
                             </Box>
                             <Box className="shareIcon">
-                              <i class="fa-brands fa-pinterest  fa-lg"></i>
+                              <i className="fa-brands fa-pinterest  fa-lg"></i>
                             </Box>
                             <Box className="shareIcon">
-                              <i class="fa-brands fa-instagram  fa-lg"></i>
+                              <i className="fa-brands fa-instagram  fa-lg"></i>
                             </Box>
                             <Box className="shareIcon">
-                              <i class="fa-brands fa-twitter fa-lg"></i>
+                              <i className="fa-brands fa-twitter fa-lg"></i>
                             </Box>
                           </Box>
                         </Box>

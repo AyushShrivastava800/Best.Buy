@@ -7,10 +7,14 @@ import Popper from '@mui/material/Popper';
 import MenuItem from '@mui/material/MenuItem';
 import MenuList from '@mui/material/MenuList';
 import Stack from '@mui/material/Stack';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-export default function MenuListComposition() {
+import FilterListIcon from '@mui/icons-material/FilterList';
+import { Categoryfilter } from '../../../features/slice/filterSortSlice';
+import { useDispatch } from 'react-redux';
+
+export default function MenuListComposition() { 
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
+  const dispatch=useDispatch();
 
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
@@ -55,8 +59,7 @@ export default function MenuListComposition() {
           aria-haspopup="true"
           onClick={handleToggle}
         >
-       Filter
-       <KeyboardArrowDownIcon fontSize='small' />
+   <FilterListIcon/>
         </Button>
         <Popper
           open={open}
@@ -82,9 +85,10 @@ export default function MenuListComposition() {
                     aria-labelledby="composition-button"
                     onKeyDown={handleListKeyDown}
                   >
-                    <MenuItem onClick={handleClose}>Profile</MenuItem>
-                    <MenuItem onClick={handleClose}>My account</MenuItem>
+                    <MenuItem onClick={()=>dispatch(Categoryfilter())}>Category</MenuItem>
+                    <MenuItem onClick={handleClose}></MenuItem>
                     <MenuItem onClick={handleClose}>Logout</MenuItem>
+                    
                   </MenuList>
                 </ClickAwayListener>
               </Paper>

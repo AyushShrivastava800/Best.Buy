@@ -2,11 +2,14 @@ import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 import Productcard from "../../generic-component/product-card";
 import SideProductCard from "../../generic-component/sidebox-product-card";
-// import { ProductData } from "../../../data/Product";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 
 const LandingStore = () => {
   const { cartItems, amount, total } = useSelector((store) => store.cart);
+  
+  const Items=[...cartItems].reverse()
+
   return (
     <Box className="mt-50 mb-50">
       <Grid container spacing={2}>
@@ -18,7 +21,7 @@ const LandingStore = () => {
           </Grid>
           <Box className="landingProducts mt-30 mb-30">
             <Grid container spacing={1}>
-              {cartItems?.map((data, index) => (
+              {Items?.slice(0, 6).map((data, index) => (
                 <Grid item xs={6} sm={4} key={data.id}>
                   <Productcard data={data} />
                 </Grid>
