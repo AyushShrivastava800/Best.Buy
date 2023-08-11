@@ -63,7 +63,7 @@ function BlogCarousel() {
     <Box>
       <Slider {...settings}>
         {items.map((e) => (
-          <Box>
+          <Box key={e.id}>
             <BlogCards />
           </Box>
         ))}

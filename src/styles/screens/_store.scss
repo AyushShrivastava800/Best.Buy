@@ -15,14 +15,6 @@
   .filterBtn ,.sortBtn{
 color: black;
   }
-    
-  
-  .fsBarbutton {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 20px;
-  }
   .filterSidebar {
     width: 100%;
   }
@@ -32,5 +24,18 @@ color: black;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+  }
+  .pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.main-sidebar{
+  .categories{
+    &:hover{
+      background: $primary;
+      color:#fff
+    }
   }
 }

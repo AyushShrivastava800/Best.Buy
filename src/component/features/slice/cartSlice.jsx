@@ -5,11 +5,7 @@ import { Product } from "../../../data/cartProducts";
 const cartFromLocalStorage = JSON.parse(localStorage.getItem('item'));
 const initialCartItems = cartFromLocalStorage ? cartFromLocalStorage.products : [];
 
- 
-
-
-
-const initialState = {
+ const initialState = {
   cartItems: Product,
   newCart:initialCartItems,
   amount:initialCartItems.length,

@@ -1,9 +1,8 @@
 import React from "react";
 import { Grid, Typography, Divider } from "@mui/material";
 import { Box, Container } from "@mui/system";
-import { Link } from "react-router-dom";
 import Productcard from "../../generic-component/product-card";
-import Filter from "./filterbtn/FilterButton";
+
 import SortBy from "./storeSortby/SortBy";
 import MenuIcon from "@mui/icons-material/Menu";
 import SideBar from "./storesidebar/SideBar.jsx";
@@ -11,8 +10,11 @@ import Drawer from "@mui/material/Drawer";
 import CloseIcon from "@mui/icons-material/Close";
 import TopBanner from "../../generic-component/TopBannner";
 import { useSelector } from "react-redux";
+import { Pagination } from "@mui/material";
+import { useState } from "react";
 function Store() {
-  const { cartItems } = useSelector((store) => store.cart);
+  const { productSort } = useSelector((store) => store.filterSort);
+  const [pageApi, setPageApi] = useState(1);
 
   const [state, setState] = React.useState({
     right: false,
@@ -25,9 +27,16 @@ function Store() {
     ) {
       return;
     }
-
     setState({ ...state, [anchor]: open });
   };
+
+  const itemsPerPage = 8; 
+  const pageCount = Math.ceil(productSort.length / itemsPerPage);
+  const startIndex = (pageApi - 1) * itemsPerPage;
+  const displayedProducts = productSort.slice(
+    startIndex,
+    startIndex + itemsPerPage
+  );
 
   return (
     <div>
@@ -39,11 +48,8 @@ function Store() {
           <Container>
             <Box>
               <Box className="filterBar">
-                <Box className="fsBarbutton">
-                  <Filter>Filter</Filter>
-                </Box>
-                <Box sx={{ display: { md: "flex", xs: "none" } }}>
-                  <SortBy> SortBy</SortBy>
+                <Box>
+                  <SortBy />
                 </Box>
 
                 <Box sx={{ display: { md: "none", sm: "flex" } }}>
@@ -84,11 +90,20 @@ function Store() {
                 </Grid>
                 <Grid item md={9} sm={12}>
                   <Grid container spacing={1} className="productsGrid">
-                    {cartItems?.map((data, index) => (
-                      <Grid item md={3} sm={4} xs={6}>
+                    {displayedProducts.map((data, index) => (
+                      <Grid item md={3} sm={4} xs={6} key={data.id}>
                         <Productcard data={data} />
                       </Grid>
                     ))}
+                    <Grid item xs={12}>
+                      <Box className="pagination"> 
+                      <Pagination
+                        count={pageCount}
+                        onChange={(e, value) => setPageApi(value)}
+                      />
+
+                      </Box>
+                    </Grid>
                   </Grid>
                 </Grid>
               </Grid>

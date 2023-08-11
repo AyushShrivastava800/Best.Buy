@@ -33,7 +33,8 @@ function ProductCarousel() {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 1,
-          arrows: false,
+          arrows: true,
+          dots: false,
         },
       },
       {
@@ -42,6 +43,7 @@ function ProductCarousel() {
           slidesToShow: 2,
           slidesToScroll: 1,
           arrows: false,
+          dots: false,
         },
       },
     ],

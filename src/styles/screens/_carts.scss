@@ -19,8 +19,18 @@
       .tableHeading {
         font-size: $font-size-lg;
       }
+      .res-head{
+        @media only screen and (max-width:600px){
+          display: none;
+        }
+      }
       .tableText {
         font-size: $font-size-base;
+    }
+    .res-txt{
+      @media only screen and (max-width:600px){
+        display: none;
+      }
     }
    
       .product-counter{
