@@ -13,6 +13,7 @@ import { store } from "./component/features/store/store";
 import WishList from "./component/screens/wishListPage/WishList";
 import Login from "./component/screens/login/Login";
 import SignUp from "./component/screens/signUp/SignUp";
+import Payment from "./component/screens/Payment/Payment";
 const App = () => {
   return (
     <>
@@ -28,6 +29,7 @@ const App = () => {
           <Route exact path="wishlist" element={<WishList />} />
           <Route exact path="login" element={<Login />} />
           <Route exact path="signup" element={<SignUp />} />
+          <Route exact path="payment" element={<Payment />} />
         </Routes>
         <Footer />
       </Provider>

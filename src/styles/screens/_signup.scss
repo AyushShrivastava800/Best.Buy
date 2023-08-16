@@ -1,4 +1,6 @@
 .signupPage {
+  background: rgb(204,153,102);
+  background: radial-gradient(circle, rgba(204,153,102,1) 0%, rgba(51,51,51,1) 100%);
   .banner {
     .bannerImg {
       height: 300px;
@@ -8,11 +10,7 @@
       background-image: url(../../assets/images/ales-nesetril-Im7lZjxeLhg-unsplash.jpg);
     }
   }
-  .contents {
-    background-image: url(../../assets/images/bg_bggenerator_com.png);
-    background-position: center;
-    background-size: cover;
-  }
+ 
   .form-container {
     .form-contents {
       padding: 1rem;

@@ -8,7 +8,7 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { Box } from "@mui/system";
 import { Button, Divider, Typography } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import {
   clearCart,
@@ -18,11 +18,7 @@ import {
 } from "../../features/slice/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 
-
-
-
 export default function CartTable({ ProductData }) {
- 
   const { total } = useSelector((store) => store.cart);
   const dispatch = useDispatch();
 
@@ -74,7 +70,7 @@ export default function CartTable({ ProductData }) {
                   </Box>
                 </Box>
               </TableCell>
-            
+
               <TableCell align="right" className="tableText ">
                 {row.price}
               </TableCell>
@@ -98,7 +94,6 @@ export default function CartTable({ ProductData }) {
                   <Box>
                     <Typography className="p-count-icon">
                       {row.amount}
-                   
                     </Typography>
                   </Box>
                   <Box>
@@ -139,13 +134,16 @@ export default function CartTable({ ProductData }) {
           </TableRow>
           <TableRow>
             <TableCell align="center" colSpan={3}>
-              <Button
-                variant="outlined"
-                className="proceedbtn mb-10 hvr-bounce-to-left"
-              >
-                proceed to payment
-              </Button>
-              <Divider>OR</Divider>
+              <Link to={{ pathname: `/payment` }} className="paymentbtn">
+                <Button
+                  variant="outlined"
+                  className="proceedbtn mb-10 hvr-bounce-to-left"
+                
+                >
+                  proceed to payment
+                </Button>
+              </Link>
+                <Divider>OR</Divider>
 
               <Button
                 onClick={routeChange}

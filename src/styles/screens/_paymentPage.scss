@@ -1,0 +1,52 @@
+.paymentPage{
+    background: rgb(204,153,102);
+    background: radial-gradient(circle, rgba(204,153,102,1) 0%, rgba(51,51,51,1) 100%);
+    .banner {
+        .bannerImg {
+          height: 300px;
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-image: url(../../assets/images/ales-nesetril-Im7lZjxeLhg-unsplash.jpg);
+        }
+      }
+    
+      .form-container {
+        .form-contents {
+          padding: 1rem;
+          margin-top: 50px;
+          margin-bottom: 50px;
+          .loginHead {
+            font-size: $h3-font-size;
+            color: $dark-gray;
+          }
+          .Inputfield {
+          
+            &:focus-visible {
+              outline: $primary;
+            }
+          }
+          .expdate{
+            margin-top: 8px;
+          }
+        }
+        .Submitbtn {
+          font-size: $h3-font-size;
+        }
+        .signupbtn {
+          .signuplink {
+            text-decoration: none;
+            color: $primary;
+            &:hover {
+              color: #fff;
+            }
+          }
+        }
+        .error{
+          color: red;
+        }
+   
+      }
+    
+
+}

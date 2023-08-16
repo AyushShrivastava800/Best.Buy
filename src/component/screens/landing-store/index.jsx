@@ -2,7 +2,6 @@ import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 import Productcard from "../../generic-component/product-card";
 import SideProductCard from "../../generic-component/sidebox-product-card";
-import { useState } from "react";
 import { useSelector } from "react-redux";
 
 const LandingStore = () => {

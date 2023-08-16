@@ -32,7 +32,7 @@ function Login() {
   useEffect(() => {
     trigger();
   }, []);
-  
+    
   const Navigate = useNavigate();
   const dispatch = useDispatch();
   dispatch(getAllUsers(data));
